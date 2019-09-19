@@ -13,10 +13,9 @@ const wageInPeriod = document.getElementById('wage-in-period');
 periodStart.value = '2019-09-16';
 periodEnd.value = '2019-09-20';
 
-// Add Event Listeners
-// Create class instance, passing in user inputs on event
-// Call Class Method
-hourlyRate.addEventListener('keyup', () => {
+function getWage() {
+  // Create class instance, passing in user inputs as class properties
+  // Call Class Method
   const employee1 = new Employee(
     hourlyRate.value,
     dailyHours.value,
@@ -25,70 +24,33 @@ hourlyRate.addEventListener('keyup', () => {
     new Date(periodEnd.value)
   );
   wageInPeriod.value = employee1.getWageInPeriod();
+}
+
+// Add Event Listeners and call getWage()
+hourlyRate.addEventListener('keyup', () => {
+  getWage();
 });
 
 dailyHours.addEventListener('keyup', () => {
-  const employee1 = new Employee(
-    hourlyRate.value,
-    dailyHours.value,
-    workingDays.value,
-    new Date(periodStart.value),
-    new Date(periodEnd.value)
-  );
-  wageInPeriod.value = employee1.getWageInPeriod();
+  getWage();
 });
 
 workingDays.addEventListener('keyup', () => {
-  const employee1 = new Employee(
-    hourlyRate.value,
-    dailyHours.value,
-    workingDays.value,
-    new Date(periodStart.value),
-    new Date(periodEnd.value)
-  );
-  wageInPeriod.value = employee1.getWageInPeriod();
+  getWage();
 });
 
 periodStart.addEventListener('click', () => {
-  const employee1 = new Employee(
-    hourlyRate.value,
-    dailyHours.value,
-    workingDays.value,
-    new Date(periodStart.value),
-    new Date(periodEnd.value)
-  );
-  wageInPeriod.value = employee1.getWageInPeriod();
+  getWage();
 });
 
 periodStart.addEventListener('keyup', () => {
-  const employee1 = new Employee(
-    hourlyRate.value,
-    dailyHours.value,
-    workingDays.value,
-    new Date(periodStart.value),
-    new Date(periodEnd.value)
-  );
-  wageInPeriod.value = employee1.getWageInPeriod();
+  getWage();
 });
 
 periodEnd.addEventListener('click', () => {
-  const employee1 = new Employee(
-    hourlyRate.value,
-    dailyHours.value,
-    workingDays.value,
-    new Date(periodStart.value),
-    new Date(periodEnd.value)
-  );
-  wageInPeriod.value = employee1.getWageInPeriod();
+  getWage();
 });
 
 periodEnd.addEventListener('keyup', () => {
-  const employee1 = new Employee(
-    hourlyRate.value,
-    dailyHours.value,
-    workingDays.value,
-    new Date(periodStart.value),
-    new Date(periodEnd.value)
-  );
-  wageInPeriod.value = employee1.getWageInPeriod();
+  getWage();
 });
